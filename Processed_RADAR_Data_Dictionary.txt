@@ -1,0 +1,60 @@
+﻿Each of these variable identifiers is preceded by TRACKX_, where X can be a number between 1 and 8.
+
+TARGET_ID:
+-       Units:
+-       Description: object_id_raw_unique edited to join targets that should be continuous.
+
+
+X_POS_PROCESSED:
+-       Units: meters
+-       Description: Distance between target and participant vehicle front bumper, projected onto x-axis of participant vehicle. Ghost targets removed, targets joined, data smoothed
+
+
+Y_POS_PROCESSED:
+-       Units: meters
+-       Description: Distance between target and HV front bumper, projected onto y-axis of HV. Ghost targets removed, targets joined, data smoothed
+
+
+X_VEL_PROCESSED:
+-       Units: meters/second
+-       Description: x-axis component of range rate (relative velocity) between target and participant vehicle. Ghost targets removed, targets joined, data smoothed
+
+
+Y_VEL_PROCESSED:
+-       Units: meters/second
+-       Description: y-axis component of range rate (relative velocity) between target and participant vehicle. Ghost targets removed, targets joined, data smoothed
+
+
+X_ACC_ESTIMATED:
+-       Units: meters/second^2
+-       Description: Estimated participant x-axis component of relative acceleration between target and participant vehicle.
+
+
+TARGET_TRAVEL_DIRECTION:
+-       Units: 2: The target is traveling in the same direction as the participant vehicle at time ti. 
+               1: The target is stationary at time ti, but a time exists, tj, at which the same target is traveling in the same direction of the participant vehicle. 
+               0: The target is stationary at time = ti and is also stationary for all other observations of the target. 
+               -1: The target is stationary at time = ti, but there exists a time=tj at which the same target is traveling in the opposite direction of the participant vehicle. 
+               -2: The target is traveling in the opposite direction as the participant vehicle at time ti and also at all other times that the object is being tracked. 
+               99: The direction of travel is unknown.
+-       Description: A target’s direction of travel at time ti 
+
+
+LANE:
+-       Units: 2: There exists at least one lane to the right of the participant vehicle that separates the participant vehicle from the Target. 
+               1: The Target is in the adjacent lane to the right of the participant vehicle.  
+               0: The Target is in the same lane as the participant vehicle.  
+               -1: The Target is in the adjacent lane to the left of the participant vehicle. 
+               -2: There exists at least one lane to the left of the participant vehicle that separates the participant vehicle from the Target. Note that oncoming Targets are not classified into lanes. These targets are given null values for "Lane"
+-       Description: A target's lane. 
+
+
+IS_LEAD_VEHICLE:
+-       Units: 1: The target is a lead vehicle (The target is the closest target that is in the same lane as the participant vehicle) 
+               0: The target is not a lead vehicle
+-       Description: is target a lead vehicle 
+
+
+HEADWAY:
+-       Units: second
+-       Description: headway = (x_position)/(participant vehicle speed)
