@@ -2,7 +2,7 @@
 #N: the threshold of wheel turn that signifies a turn in an automobile (in degrees)
 #E1: the amount of time (in tenths of second) to capture before the turn begins
 #E2: the amount of time (in tenths of second) to capture after the turn ends 
-def turn_chunks(input_path, N = 180, E1 = 50, E2 = 0):
+def turn_chunks(input_path, N = 150, E1 = 50, E2 = 0):
     df = pd.read_csv(input_path, na_values = ' ')
     end = 0
     for i in range(len(df)-1):
