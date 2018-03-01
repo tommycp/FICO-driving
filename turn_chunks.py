@@ -17,7 +17,7 @@ def turn_chunks(input_path, N = 180, E1 = 50, E2 = 0):
             while df['vtti.steering_wheel_position'][end] > N:
                 end += 1
             print("RIGHT",i)
-            print(time(start - E),",",time(end))
+            print(time(start - E1),",",time(end + E2))
         elif df['vtti.steering_wheel_position'][i] < -N:
             start = i
             while df['vtti.steering_wheel_position'][end] < -N:
